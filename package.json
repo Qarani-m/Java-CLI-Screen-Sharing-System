@@ -1,0 +1,8 @@
+{
+  "dependencies": {
+    "moment": "^2.30.1",
+    "random": "^5.4.0",
+    "simple-git": "^3.28.0",
+    "simplegit": "^1.0.2"
+  }
+}
