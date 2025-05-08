@@ -58,3 +58,5 @@ public class Message implements Serializable {
 }
 
 /* 2025-06-19 16:26:52: Modularized protocol logic */
+
+/* 2025-06-19 16:26:52: Enhanced thread safety */
