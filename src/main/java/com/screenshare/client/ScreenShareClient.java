@@ -464,3 +464,5 @@ public class ScreenShareClient {
     }
 }
 /* 2025-06-19 16:26:51: Introduced proper resource cleanup */
+
+/* 2025-06-19 16:26:53: Removed dead code from protocol */
