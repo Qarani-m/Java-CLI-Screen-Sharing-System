@@ -81,3 +81,5 @@ public class Protocol {
 /* 2025-06-19 16:26:53: Updated server configuration handling */
 
 /* 2025-06-19 16:26:54: Modularized protocol logic */
+
+/* 2025-06-19 16:26:54: Added null safety checks */
