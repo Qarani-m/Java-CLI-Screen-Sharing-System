@@ -132,3 +132,5 @@ public class ServerConfig {
 /* 2025-06-19 16:26:50: Refactored network layer */
 
 /* 2025-06-19 16:26:54: Modularized protocol logic */
+
+/* 2025-06-19 16:26:54: Logging mechanism refactored */
