@@ -30,3 +30,5 @@ public class Logger {
 /* 2025-06-19 16:26:51: Improved error logging */
 
 /* 2025-06-19 16:26:53: Removed dead code from protocol */
+
+/* 2025-06-19 16:26:55: Logging mechanism refactored */
