@@ -42,3 +42,5 @@ public enum MessageType {
 /* 2025-06-19 16:26:51: Updated JavaDoc comments */
 
 /* 2025-06-19 16:26:52: Codebase cleanup and style consistency */
+
+/* 2025-06-19 16:26:55: Improved error logging */
