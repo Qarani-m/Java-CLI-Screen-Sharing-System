@@ -44,3 +44,5 @@ public enum MessageType {
 /* 2025-06-19 16:26:52: Codebase cleanup and style consistency */
 
 /* 2025-06-19 16:26:55: Improved error logging */
+
+/* 2025-06-19 16:26:57: Optimized socket handling */
