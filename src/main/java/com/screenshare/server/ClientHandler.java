@@ -165,3 +165,5 @@ public class ClientHandler implements Runnable {
 /* 2025-06-19 16:26:56: Introduced proper resource cleanup */
 
 /* 2025-06-19 16:26:57: Refactored network layer */
+
+/* 2025-06-19 16:26:58: Updated JavaDoc comments */
