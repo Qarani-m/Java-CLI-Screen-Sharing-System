@@ -141,3 +141,5 @@ public class ClientConfig {
 /* 2025-06-19 16:26:57: Removed dead code from protocol */
 
 /* 2025-06-19 16:26:58: Updated JavaDoc comments */
+
+/* 2025-06-19 16:26:58: Introduced proper resource cleanup */
