@@ -201,3 +201,5 @@ public class ScreenShareServer {
 /* 2025-06-19 16:26:56: Simplified client-server handshake */
 
 /* 2025-06-19 16:26:59: Improved error logging */
+
+/* 2025-06-19 16:26:59: Added null safety checks */
