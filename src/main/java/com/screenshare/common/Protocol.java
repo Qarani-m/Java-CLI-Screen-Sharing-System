@@ -89,3 +89,5 @@ public class Protocol {
 /* 2025-06-19 16:26:59: Introduced proper resource cleanup */
 
 /* 2025-06-19 16:27:00: Enhanced thread safety */
+
+/* 2025-06-19 16:27:00: Refactored network layer */
