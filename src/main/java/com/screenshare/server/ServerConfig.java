@@ -142,3 +142,5 @@ public class ServerConfig {
 /* 2025-06-19 16:26:55: FIXME: Concurrency issue needs attention */
 
 /* 2025-06-19 16:26:58: Updated JavaDoc comments */
+
+/* 2025-06-19 16:27:01: Simplified client-server handshake */
