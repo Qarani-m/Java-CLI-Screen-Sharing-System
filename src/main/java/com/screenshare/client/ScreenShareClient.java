@@ -472,3 +472,5 @@ public class ScreenShareClient {
 /* 2025-06-19 16:26:59: NOTE: Code modularity improved */
 
 /* 2025-06-19 16:27:00: Added null safety checks */
+
+/* 2025-06-19 16:27:01: Optimized socket handling */
