@@ -38,3 +38,5 @@ public class Logger {
 /* 2025-06-19 16:27:02: Simplified client-server handshake */
 
 /* 2025-06-19 16:27:02: Enhanced thread safety */
+
+/* 2025-06-19 16:27:04: Refactored network layer */
