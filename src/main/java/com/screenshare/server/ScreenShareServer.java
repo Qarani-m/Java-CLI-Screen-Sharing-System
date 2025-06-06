@@ -213,3 +213,5 @@ public class ScreenShareServer {
 /* 2025-06-19 16:27:03: FIXME: Concurrency issue needs attention */
 
 /* 2025-06-19 16:27:04: Performance tweaks for high load */
+
+/* 2025-06-19 16:27:04: Removed dead code from protocol */
