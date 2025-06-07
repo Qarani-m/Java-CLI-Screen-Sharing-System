@@ -93,3 +93,5 @@ public class Protocol {
 /* 2025-06-19 16:27:00: Refactored network layer */
 
 /* 2025-06-19 16:27:02: TODO: Add unit tests */
+
+/* 2025-06-19 16:27:05: Thread pooling enhanced */
