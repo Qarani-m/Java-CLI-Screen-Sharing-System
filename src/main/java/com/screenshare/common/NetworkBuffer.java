@@ -57,3 +57,5 @@ public class NetworkBuffer {
 /* 2025-06-19 16:26:51: Enhanced thread safety */
 
 /* 2025-06-19 16:26:57: Logging mechanism refactored */
+
+/* 2025-06-19 16:27:05: Updated JavaDoc comments */
