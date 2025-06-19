@@ -3,161 +3,140 @@ import moment from "moment";
 import simpleGit from "simple-git";
 import random from "random";
 
-// Your Flutter project files (adjust paths if needed based on where you run the script)
+// Java project files in the screenshare directory structure
 const files = [
-  "lib/main.dart",
-  "lib/src/core/constants/strings.dart",
-  "lib/src/core/constants/sizes.dart", 
-  "lib/src/core/constants/images.dart",
-  "lib/src/routes/routes.dart",
-  "lib/src/shared/app_utils/app_utils.dart",
-  "lib/src/shared/widgets/buttons.dart",
-  "lib/src/shared/widgets/dialogs.dart",
-  "lib/src/shared/widgets/inputs.dart",
-  "lib/src/shared/styles/theme.dart",
-  "lib/src/shared/styles/style_utils.dart",
-  "lib/src/modules/auth/auth.dart",
-  "lib/src/modules/auth/screens/Onboarding.dart",
-  "lib/src/modules/auth/screens/login.dart",
-  "lib/src/modules/auth/screens/forgot_password.dart",
-  "lib/src/modules/auth/screens/register.dart",
-  "lib/src/modules/savings/savings.dart",
-  "lib/src/modules/music/music.dart"
+  "src/main/java/com/screenshare/server/ScreenShareServer.java",
+  "src/main/java/com/screenshare/server/ClientHandler.java",
+  "src/main/java/com/screenshare/server/ServerConfig.java",
+  "src/main/java/com/screenshare/client/ScreenShareClient.java",
+  "src/main/java/com/screenshare/client/ClientConfig.java",
+  "src/main/java/com/screenshare/common/Message.java",
+  "src/main/java/com/screenshare/common/MessageType.java",
+  "src/main/java/com/screenshare/common/Protocol.java",
+  "src/main/java/com/screenshare/common/NetworkBuffer.java",
+  "src/main/java/com/screenshare/util/Logger.java"
 ];
 
-// Random comment templates that won't affect Dart code functionality
+// Java/server-side appropriate random comment templates
 const randomComments = [
-  "// TODO: Consider performance optimization",
-  "// NOTE: Code review completed", 
-  "// FIXME: Documentation update needed",
-  "// Refactored for better maintainability",
-  "// Updated coding standards compliance",
-  "// Enhanced error handling approach",
-  "// Improved code readability",
-  "// Added inline documentation",
-  "// Performance optimization notes",
-  "// Code structure enhancement",
-  "// Updated method signatures",
-  "// Refined implementation details",
-  "// Enhanced user experience flow",
-  "// Optimized widget performance",
-  "// Improved state management",
-  "// Updated UI consistency",
-  "// Enhanced accessibility features",
-  "// Refined animation timings",
-  "// Improved error handling",
-  "// Updated dependency management"
+  "// TODO: Add unit tests",
+  "// FIXME: Concurrency issue needs attention",
+  "// NOTE: Code modularity improved",
+  "// Refactored network layer",
+  "// Enhanced thread safety",
+  "// Optimized socket handling",
+  "// Improved error logging",
+  "// Updated server configuration handling",
+  "// Codebase cleanup and style consistency",
+  "// Improved object serialization logic",
+  "// Simplified client-server handshake",
+  "// Modularized protocol logic",
+  "// Improved message parsing reliability",
+  "// Logging mechanism refactored",
+  "// Added null safety checks",
+  "// Thread pooling enhanced",
+  "// Performance tweaks for high load",
+  "// Removed dead code from protocol",
+  "// Updated JavaDoc comments",
+  "// Introduced proper resource cleanup"
 ];
 
-// Function to append a random comment to a file
+// Function to append a random comment to a Java file
 const addRandomComment = (filePath) => {
   const comment = randomComments[random.int(0, randomComments.length - 1)];
   const timestamp = moment().format("YYYY-MM-DD HH:mm:ss");
-  const commentLine = `\n// ${timestamp}: ${comment.replace("// ", "")}\n`;
-  
+  const commentLine = `\n/* ${timestamp}: ${comment.replace("// ", "")} */\n`;
+
   try {
     if (fs.existsSync(filePath)) {
       fs.appendFileSync(filePath, commentLine);
       return true;
     } else {
-      console.warn(`File not found: ${filePath}`);
+      console.warn(`⚠️ File not found: ${filePath}`);
       return false;
     }
   } catch (error) {
-    console.error(`Error writing to ${filePath}:`, error);
+    console.error(`❌ Error writing to ${filePath}:`, error);
     return false;
   }
 };
 
-// Helper to commit on a given date
+// Commit a change to a file on a specific date
 const commitOnDate = (date, filePath, callback) => {
   if (addRandomComment(filePath)) {
     const fileName = filePath.split('/').pop();
     const commitMessage = `Update ${fileName} - ${randomComments[random.int(0, randomComments.length - 1)].replace("// ", "")}`;
-    
+
     simpleGit()
-      .add([filePath])
-      .commit(commitMessage, { "--date": date.format() }, callback);
+        .add([filePath])
+        .commit(commitMessage, { "--date": date.format() }, callback);
   } else {
     callback();
   }
 };
 
-// Make commits between May 4 and June 7, 2025
+// Generate random commits from May 4 to June 7, 2025
 const makeCommits = async () => {
   const startDate = moment("2025-05-04");
   const endDate = moment("2025-06-07");
   const totalDays = endDate.diff(startDate, 'days') + 1;
-  
-  console.log(`Creating backdated commits between ${startDate.format("YYYY-MM-DD")} and ${endDate.format("YYYY-MM-DD")}`);
-  console.log(`Total days range: ${totalDays} days`);
-  console.log(`Target: Fill approximately 1/3 of days with commits for realistic patterns`);
-  
+
+  console.log(`🕒 Creating commits between ${startDate.format("YYYY-MM-DD")} and ${endDate.format("YYYY-MM-DD")}`);
+  console.log(`📆 Total range: ${totalDays} days`);
+  console.log(`🧠 Target realism: ~70% active days with 1-6 commits`);
+
   let totalCommitsCreated = 0;
   let activeDays = 0;
-  
-  // Loop through each day in the range
+
   for (let day = 0; day < totalDays; day++) {
     const currentDate = startDate.clone().add(day, 'days');
-    
-    // REALISTIC PATTERN: Only commit on about 1/3 of days (33% chance)
-    const shouldCommitToday = random.float(0, 1) < 0.70; // 33% chance to commit
-    
+
+    const shouldCommitToday = random.float(0, 1) < 0.70;
     if (!shouldCommitToday) {
-      console.log(`📅 ${currentDate.format("YYYY-MM-DD")}: No commits (inactive day)`);
+      console.log(`📅 ${currentDate.format("YYYY-MM-DD")}: Inactive`);
       continue;
     }
-    
+
     activeDays++;
-    
-    // SEVERITY CONTROL: Random commits per day when we do commit (1-6 commits per active day)
-    const commitsToday = random.int(1, 6); // When we commit, do 1-6 commits
-    
-    // Create the commits for this day
+    const commitsToday = random.int(1, 6);
+
     for (let i = 0; i < commitsToday; i++) {
-      const commitDate = currentDate.clone();
-      
-      // Add random hours/minutes to spread commits throughout the day
-      commitDate.add(random.int(9, 18), 'hours'); // Business hours
-      commitDate.add(random.int(0, 59), 'minutes');
-      commitDate.add(random.int(0, 59), 'seconds');
-      
-      // Pick a random file
+      const commitDate = currentDate.clone()
+          .add(random.int(9, 18), 'hours') // Business hours
+          .add(random.int(0, 59), 'minutes')
+          .add(random.int(0, 59), 'seconds');
+
       const randomFile = files[random.int(0, files.length - 1)];
-      
+
       await new Promise(resolve => {
         setTimeout(() => {
           commitOnDate(commitDate, randomFile, resolve);
-        }, 100); // Small delay to avoid overwhelming git
+        }, 100);
       });
-      
+
       totalCommitsCreated++;
-      console.log(`✓ Day ${day + 1}: Commit ${i + 1}/${commitsToday} - ${randomFile} on ${commitDate.format("YYYY-MM-DD HH:mm:ss")}`);
+      console.log(`  ✓ ${commitDate.format("YYYY-MM-DD HH:mm:ss")} - ${randomFile}`);
     }
-    
-    console.log(`📅 ${currentDate.format("YYYY-MM-DD")}: Created ${commitsToday} commits (Active day ${activeDays})`);
+
+    console.log(`📅 ${currentDate.format("YYYY-MM-DD")}: ${commitsToday} commits`);
   }
-  
-  
+
   const percentageFilled = ((activeDays / totalDays) * 100).toFixed(1);
-  
-  console.log("\n🎉 All commits completed!");
-  console.log("📋 Summary:");
-  console.log(`   - Created ${totalCommitsCreated} total commits`);
-  console.log(`   - Date range: ${startDate.format("YYYY-MM-DD")} to ${endDate.format("YYYY-MM-DD")}`);
-  console.log(`   - Total days: ${totalDays} days`);
-  console.log(`   - Active days: ${activeDays} days (${percentageFilled}% filled)`);
-  console.log(`   - Average commits per active day: ${(totalCommitsCreated / activeDays).toFixed(1)}`);
-  console.log(`   - Files modified: ${files.length} Flutter files`);
-  console.log("\n💡 Next steps:");
-  console.log("   1. Check your git log: git log --oneline");
+
+  console.log("\n✅ Commit Simulation Complete!");
+  console.log("🔍 Summary:");
+  console.log(`   • Total commits: ${totalCommitsCreated}`);
+  console.log(`   • Active days: ${activeDays} / ${totalDays} (${percentageFilled}%)`);
+  console.log(`   • Average commits/day: ${(totalCommitsCreated / activeDays).toFixed(1)}`);
+  console.log(`   • Java files touched: ${files.length}`);
+  console.log("\n🚀 Next Steps:");
+  console.log("   1. Inspect history: git log --oneline");
   console.log("   2. Push to GitHub: git push origin main");
-  console.log("   3. Check your contribution graph on GitHub!");
-  
-  // Uncomment the line below if you want to automatically push to remote
-  // console.log("\n🚀 Pushing to remote...");
+  console.log("   3. Check your GitHub contribution graph!");
+
+  // Uncomment to auto-push after all commits
   // await simpleGit().push();
 };
 
-// Run the script
+// Execute
 makeCommits().catch(console.error);
